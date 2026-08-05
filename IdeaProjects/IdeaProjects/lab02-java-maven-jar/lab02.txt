@@ -1,0 +1,66 @@
+BÁO CÁO THỰC HÀNH LAB 2
+Họ và tên:Nguyễn Thế Minh
+MSV:20230361
+Lớp:DCCNTT14.1
+3. Nội dung thực hiệ
+3.1. Kiểm tra môi trường
+
+Kiểm tra cài đặt Java và Maven bằng các lệnh:
+
+bash
+java -version
+javac -version
+mvn -version
+echo %JAVA_HOME%
+
+
+Kết quả cho thấy JDK và Maven đã được cài đặt thành công, biến môi trường JAVA_HOME được cấu hình đúng.
+
+
+3.2. Tạo Maven Project
+
+Tạo project Maven với các thông tin:
+
+groupId: `vn.edu.eaut`
+artifactId: `lab02-java-maven-jar`
+version: `1.0-SNAPSHOT`
+
+Cấu trúc project:
+
+lab02-java-maven-jar
+│
+├── pom.xml
+└── src
+    └── main
+        └── java
+            └── vn
+                └── edu
+                    └── eaut
+                        └── lab2
+                            ├── App.java
+                            ├── Student.java
+                            └── GradeCalculator.java
+
+3.3. Chức năng chương trình
+
+Chương trình được xây dựng theo mô hình gồm ba lớp:
+
+Student:Lưu thông tin sinh viên gồm mã sinh viên, họ tên, điểm chuyên cần, điểm giữa kỳ và điểm cuối kỳ.
+GradeCalculator:Tính điểm tổng kết theo công thức:
+
+Diem tong ket = Diem chuyen can × 10%
+              + Diem giua ky × 30%
+              + Diem cuoi ky × 60%
+
+Đồng thời xếp loại:
+
+A: từ 8.5 trở lên
+B: từ 7.0 đến dưới 8.5
+C: từ 5.5 đến dưới 7.0
+D: từ 4.0 đến dưới 5.5
+F: dưới 4.0
+
+Lớp này cũng kiểm tra điểm hợp lệ trong khoảng từ 0 đến 10.
+
+App:Nhập thông tin nhiều sinh viên từ bàn phím, tính điểm tổng kết, xếp loại và in danh sách kết quả.
+
